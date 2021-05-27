@@ -1,20 +1,30 @@
+//Variables
+
 const recipeContainer = document.getElementById('recipes')
-const searchButton = document.querySelector('searchButton')
+const searchButton = document.querySelector('.Search-recipe')
 
 const searchRecipes = (Recipe) => {
     recipeContainer.innerHTML = ""
 }
 
+        //Actual Behavior
 fetch('https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=4c110f3d05744462b7cc71ca2f2d4735')
     .then(response => response.json())
         .then((data)) => {
-            console.log(data);
+            console.log(data)
+            container.insertAdjacentHTML('beforeend', content)
         }
         
         //Fail Response
-    .catch(response => (response.json()) {
+    .catch(function(response) {
             console.log('Error! Please try again');
         });
+
+        //Entry Point
+.addEventListener('click', (event) => {
+  console.log(searchButton.value)
+  searchRecipes(print.value)
+})
 
 
 /*fetch('https://api.spoonacular.com/recipes/716429/information?apiKey=4c110f3d05744462b7cc71ca2f2d4735&includeNutrition=true.')
@@ -23,10 +33,6 @@ fetch('https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=4c11
             console.log(data);
         }
 */
-
-
-
-
 
 
 /* Diogo's EXAMPLE
