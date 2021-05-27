@@ -1,19 +1,21 @@
 //Variables
 
-const recipeContainer = document.getElementById('recipes')
+const recipeContainer = document.getElementById('.recipes')
 const searchButton = document.querySelector('.Search-recipe')
+const content = document.querySelector('displayRecipe')
 
-const searchRecipes = (Recipe) => {
+const searchRecipes = (_Recipe) => {
     recipeContainer.innerHTML = ""
-}
-
-        //Actual Behavior
-fetch('https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=4c110f3d05744462b7cc71ca2f2d4735')
+    fetch('https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=4c110f3d05744462b7cc71ca2f2d4735')
     .then(response => response.json())
-        .then((data)) => {
+        .then((data) => {
             console.log(data)
             recipeContainer.insertAdjacentHTML('beforeend', content)
-        }
+        })
+      }
+
+        //Actual Behavior
+
         /*
         //Fail Response
     .catch(function(response) {
@@ -22,7 +24,7 @@ fetch('https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=4c11
         */
 
         //Entry Point
-.addEventListener('click', (event) => {
+searchButton.addEventListener('click', (event) => {
   console.log(searchButton.value)
   searchRecipes(print.value)
 })
