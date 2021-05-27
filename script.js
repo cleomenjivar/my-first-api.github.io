@@ -12,13 +12,14 @@ fetch('https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=4c11
     .then(response => response.json())
         .then((data)) => {
             console.log(data)
-            container.insertAdjacentHTML('beforeend', content)
+            recipeContainer.insertAdjacentHTML('beforeend', content)
         }
-        
+        /*
         //Fail Response
     .catch(function(response) {
             console.log('Error! Please try again');
         });
+        */
 
         //Entry Point
 .addEventListener('click', (event) => {
